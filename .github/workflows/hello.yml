@@ -1,0 +1,21 @@
+
+name: RepoLens Demo Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  demo-check:
+    name: Demo Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run demo check
+        run: |
+          echo "GitHub Actions is working!"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Workflow run completed successfully."
